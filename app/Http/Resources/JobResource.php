@@ -18,8 +18,8 @@ class JobResource extends JsonResource
             'id'               => $this->id,
             'title'            => $this->title,
             'description'      => $this->description,
-            'date'             => $this->industry_id,
-            'location'         => $this->location ? '--' : $this->location->name,
+            'date'             => $this->date,
+            'location'         => $this->location ? $this->location->name : '--',
             'applicants'       => $this->applicants->map(function ($item) {
                                         return $item->name;
                                     })->toArray(),
