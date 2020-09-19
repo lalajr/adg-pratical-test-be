@@ -21,8 +21,8 @@ Follow the steps below to make your clone of this backend ready for service.
 2. Make a local copy of the `.env` file, run this command to do so `scp .env.example .env`.
 3. Run artisan command `php artisan key:generate` to generate key for your project.
 4. Open `.env` file change the database credentials and other configs that suits your local environment. **Note: leave the `API_TOKEN` at is is.**
-5. Run artisan command `php artisan migrate`, this will create the database tables for this project.
-6. Now you can access via browser this project on your localhost **Note: Make sure your local server is up and running**
+5. Run artisan command `php artisan migrate`, this will create the database tables for this project. **Note: Make sure your local server is up and running**
+6. Now you can access via browser this project on your localhost.
 
 ## Data Seeding
 This project has a custom import scripts that will read the csv file located in `storage/app/` and will import those
