@@ -28,7 +28,7 @@ class JobRepository
             ])
             ->orderBy('title', 'ASC');
 
-        if ( $request->per_page == 'all' ) {
+        if ( $request->isNotFilled('per_page') || $request->per_page == 'all' ) {
             return $query->get();
         } else {
             return $query->paginate($request->per_page);
