@@ -22,7 +22,7 @@ Follow the steps below to make your clone of this backend ready for service.
 3. Run artisan command `php artisan key:generate` to generate key for your project.
 4. Open `.env` file change the database credentials and other configs that suits your local environment. **Note: leave the `API_TOKEN` at is is.**
 5. Run artisan command `php artisan migrate`, this will create the database tables for this project. **Note: Make sure your local server is up and running**
-6. Now you can access via browser this project on your localhost.
+6. Now you can access via browser this project on your localhost or start the setup for [Practical Test FE](https://github.com/lalajr/adg-practical-test-fe)
 
 ## Data Seeding
 This project has a custom import scripts that will read the csv file located in `storage/app/` and will import those
