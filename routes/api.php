@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Our api calls will not require the middleware of auth:api as not authentication required to access the page.
+Route::group([], function() {
+    Route::get('get-jobs', 'JobController@getJobs');
+});
