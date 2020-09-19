@@ -14,6 +14,13 @@ class JobRepository
         $this->model = $job;
     }
 
+    public function fetchJob(Request $request)
+    {
+        $obj = $this->model->findOrFail($request->id);
+
+        return $obj;
+    }
+
     public function fetchJobs(Request $request)
     {
         $query = $this->model
