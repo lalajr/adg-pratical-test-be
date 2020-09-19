@@ -40,11 +40,11 @@ class JobsImport implements OnEachRow, WithHeadingRow, WithProgressBar, WithVali
                 }
             }
 
-            $job = Job::where('job_title', $row->job_title)
+            $job = Job::where('title', $row->job_title)
                     ->where('location_id', $location->id)->first() ?: new Job();
             if (!$job->exists) {
-                $job->job_title = $row->job_title;
-                $job->job_description = $row->job_description;
+                $job->title = $row->job_title;
+                $job->description = $row->job_description;
                 $date = \DateTime::createFromFormat('d/m/Y', $row->date);
                 if ($date) {
                     $job->date = $date;
