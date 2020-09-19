@@ -26,4 +26,15 @@ class JobController extends ApiController
 
         return JobResource::collection($jobs);
     }
+
+    public function getJob(Request $request)
+    {
+        if(!$this->validateToken($request->token)) {
+            return $this->errorResponse('Error Response: request is not permitted');
+        };
+
+        $job = $this->jobRepo->fetchJob($request);
+
+        return new JobResource($job);
+    }
 }
